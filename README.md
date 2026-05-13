@@ -9,6 +9,8 @@ It provides a highly efficient and extensible global navigation framework based 
 
 ![demo](rsc/docs/demo.png)
 
+![视频演示](https://www.bilibili.com/video/BV1nR9hBsEBN/?vd_source=130b183559ca6ba69351500e44adf5ea)
+
 ## Citing
 
 If you use PCT Planner, please cite the following paper:
