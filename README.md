@@ -9,7 +9,12 @@ It provides a highly efficient and extensible global navigation framework based 
 
 ![demo](rsc/docs/demo.png)
 
-![视频演示](https://www.bilibili.com/video/BV1nR9hBsEBN/?vd_source=130b183559ca6ba69351500e44adf5ea)
+[视频演示](https://www.bilibili.com/video/BV1nR9hBsEBN/?vd_source=130b183559ca6ba69351500e44adf5ea)
+
+__在原先仓库基础上主要做如下修改：__
+- 断层扫描参数
+- 增加失败重规划
+- 增加3D起点、终点订阅
 
 ## Citing
 
