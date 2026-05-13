@@ -5,7 +5,7 @@ ROOT_DIR=$(cd $(dirname "$0"); pwd)
 
 cd lib
 
-# rm -rf build
+rm -rf build
 mkdir build
 
 cd build

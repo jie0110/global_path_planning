@@ -1,9 +1,11 @@
+import rospy
 from nav_msgs.msg import Path
 from geometry_msgs.msg import PoseStamped
 
 
 def traj2ros(traj):
     path_msg = Path()
+    path_msg.header.stamp = rospy.Time.now()
     path_msg.header.frame_id = "map"
 
     for waypoint in traj:

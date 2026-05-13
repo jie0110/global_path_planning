@@ -193,9 +193,29 @@ class Tomography(object):
         layer_points[:, 3] = vis_t[-1, self.VISPROTO_I[:, 0], self.VISPROTO_I[:, 1]]
         valid_points = layer_points[~np.isnan(layer_points).any(axis=-1)]
         global_points = np.concatenate((global_points, valid_points), axis=0)
-        
         points_msg = pc2.create_cloud(header, POINT_FIELDS_XYZI, global_points)
         self.tomogram_pub.publish(points_msg)
+        # 保存可通行代价地图
+        # map_file = os.path.splitext(self.pcd_file)[0]
+        # pcd_path = self.export_dir + map_file + '_tomogram.pcd'
+        # n_points = global_points.shape[0]
+        # header = (
+        #     "# .PCD v0.7 - Point Cloud Data file format\n"
+        #     "VERSION 0.7\n"
+        #     "FIELDS x y z intensity\n"
+        #     "SIZE 4 4 4 4\n"
+        #     "TYPE F F F F\n"
+        #     "COUNT 1 1 1 1\n"
+        #     f"WIDTH {n_points}\n"
+        #     "HEIGHT 1\n"
+        #     "VIEWPOINT 0 0 0 1 0 0 0\n"
+        #     f"POINTS {n_points}\n"
+        #     "DATA binary\n"
+        # )
+        # with open(pcd_path, 'wb') as f:
+        #     f.write(header.encode('utf-8'))
+        #     f.write(global_points.astype(np.float32).tobytes())
+        # rospy.loginfo("Tomogram PCD saved: %s", pcd_path)
 
 
 if __name__ == '__main__':
