@@ -25,6 +25,10 @@ bool OfflineElePlanner::Plan(const Eigen::Vector3i& start,
 
   if (optimize) {
     path_ = path_finder_.GetPathPoints();
+    if (path_.size() <= 1) {
+      printf("Path too short for optimization (start and goal too close)\n");
+      return false;
+    }
     path_.front().ref_v = 1;
     path_.back().ref_v = 1;
 
